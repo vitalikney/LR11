@@ -1,0 +1,6 @@
+<h1>Страница для ввода данных</h1>
+<%= form_with url: '/calc/view', method: :get do |form|%>
+    <p><%= form.label 'Введите число n (0<=n<=999999)' %></p>
+    <%= form.text_field(:number)%> <br/><br/>
+    <%= form.submit 'Ввести' %>
+<% end %>

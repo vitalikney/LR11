@@ -8,9 +8,39 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+
+    <style>
+      #container {
+        position: relative;
+        width: 100%;
+      }
+
+      #left {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 30%;
+        margin-top: 10px;
+
+      }
+
+      table {
+        text-align: center;
+        width: 100%;
+      }
+
+      table, tr, th, td {
+        border: 1px solid black;
+      }
+    </style>
   </head>
 
   <body>
     <%= yield %>
+    <p>
+      <% flash.each do |_type, msg| %>
+        <%= msg %>
+      <% end %>
+    </p>
   </body>
 </html>
