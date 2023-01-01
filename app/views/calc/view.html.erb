@@ -7,11 +7,13 @@
   </p>
 <hr>
 
+<%= link_to "xml-распечатка БД", calc_xml_path %>
+<br><br>
 <a href = "/">Повторить ввод<a>
 
 <div id="container">
-    <div id="left">
-      <table>
+  <div id="left">
+    <table>
       <thead>
         <tr>
           <th>Итерация</th>
@@ -30,3 +32,14 @@
   </div>
 </div>
 
+<!--
+  <br><br><br>
+  <div>
+    <p>База данных:</p>
+    <% Answer.all.each do |result| %>
+      <%= result.input %>
+      <%= result.output %>
+      <br>
+    <% end %>
+  </div>
+-->

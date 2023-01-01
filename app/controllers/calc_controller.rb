@@ -18,6 +18,13 @@ class CalcController < ApplicationController
     end
   end
 
+  def xml
+    @xml = Answer.all.map do |r|
+      { id: r.id, input: r.input, output: r.output,
+        created_at: r.created_at, updated_at: r.updated_at }
+    end.to_xml
+  end
+
   private
 
   def set_input
@@ -31,15 +38,6 @@ class CalcController < ApplicationController
 
     redirect_to root_path, notice: @answer.errors.objects.map(&:message).first
 
-    # # if @input&.match
-    # begin
-    #   return if @input.match?(/^\d+$/) && @input.to_i <= 999_999
-    # rescue NoMethodError
-    #   @result = 'EmptyInputError'
-    # end
+  end
 
-    # redirect_to(root_path, notice:
-    #   'Введены некорректные данные! Повторите ввод')
-  end
-  
-  end
+end

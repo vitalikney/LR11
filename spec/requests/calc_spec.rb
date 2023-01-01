@@ -56,7 +56,6 @@ end
     end
   end
 
-
   context 'parse answer' do
     it 'parameter 1002' do
       get "/calc/view", params:{number: '1010'}
