@@ -2,8 +2,8 @@
 
 <hr>
   <p>
-    Счастливое число - число, у которого суммы
-    первых и последних трёх цифр равны
+    Палиндром - число, которое читается одинаково 
+    как справа налево, так и слева направо.
   </p>
 <hr>
 
@@ -12,24 +12,34 @@
 <a href = "/">Повторить ввод<a>
 
 <div id="container">
-  <div id="left">
-    <table>
+    <div id="left">
+      <table>
       <thead>
         <tr>
-          <th>Итерация</th>
-          <th>Счастливое число</th>
+          <th>Номер</th>
+          <th>Число</th>
+          <th>Квадрат числа</th>
         </tr>
       </thead>
       <tbody>
-        <% @result.each do |iter, num| %>
+        <% @count = 0 %>
+        <% @result.each do |x, quad| %>
+        <% @count += 1 %>
           <tr>
-            <td><%= "#{iter}" %></td>
-            <td><%= "#{num}" %></td>
+            <td><%= "#{@count}" %></td>
+            <td><%= "#{x}" %></td>
+            <td><%= "#{quad}" %></td>
           </tr>
         <% end %>
       </tbody> 
-    </table>
-  </div>
+      </table>
+      <table>
+        <tr>
+          <th>Количество чисел: </th>
+          <td><%= "#{@count}" %></td>
+        </tr>
+      </table>
+    </div>
 </div>
 
 <!--
